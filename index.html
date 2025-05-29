@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyEMICalc</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📊 MyEMICalc</h1>
+    <button id="toggleMode">🌙</button>
+  </header>
+  
+  <main>
+    <div class="input-section">
+      <label>Loan Amount (₹)</label>
+      <input type="number" id="amount" placeholder="e.g. 500000">
+
+      <label>Interest Rate (%)</label>
+      <input type="number" id="rate" placeholder="e.g. 7.5">
+
+      <label>Tenure (months)</label>
+      <input type="number" id="tenure" placeholder="e.g. 60">
+
+      <button onclick="calculateEMI()">Calculate EMI</button>
+    </div>
+
+    <div class="result-section" id="result" style="display:none">
+      <h2>Result</h2>
+      <p><strong>Monthly EMI:</strong> ₹<span id="emi"></span></p>
+      <p><strong>Total Interest:</strong> ₹<span id="interest"></span></p>
+      <p><strong>Total Payment:</strong> ₹<span id="total"></span></p>
+      <canvas id="chart"></canvas>
+      <button onclick="downloadPDF()">📄 Download PDF</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MyEMICalc | Made with ❤️ by Pradip | <a href="#">Privacy</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
